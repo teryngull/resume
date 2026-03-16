@@ -1,0 +1,312 @@
+:root {
+  --app-card-border: rgba(45, 241, 219, 0.24);
+  --app-card-shadow:
+    0 18px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --app-hero-bg:
+    radial-gradient(circle at 20% 0%, rgba(45, 241, 219, 0.26), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(34, 211, 238, 0.22), transparent 42%),
+    rgba(7, 14, 30, 0.8);
+  --app-section-bg: rgba(10, 18, 38, 0.82);
+  --app-eyebrow: #74f9e9;
+  --app-logo-outline: rgba(45, 241, 219, 0.45);
+  --app-toggle-bg: rgba(8, 30, 40, 0.78);
+  --app-toggle-border: rgba(45, 241, 219, 0.5);
+  --app-toggle-hover-bg: rgba(13, 148, 136, 0.35);
+  --app-toggle-color: #d7fffb;
+  --app-contact-bg: rgba(7, 36, 47, 0.72);
+  --app-contact-border: rgba(45, 241, 219, 0.5);
+  --app-contact-text: #d7fffb;
+  --app-contact-hover-bg: rgba(20, 184, 166, 0.36);
+  --app-contact-hover-border: rgba(125, 255, 240, 0.75);
+  --app-highlight-bg: linear-gradient(160deg, rgba(7, 26, 44, 0.94), rgba(7, 29, 34, 0.86));
+  --app-highlight-border: rgba(45, 241, 219, 0.34);
+  --app-timeline-line: rgba(45, 241, 219, 0.34);
+  --app-timeline-dot: #2df1db;
+  --app-timeline-dot-ring: rgba(45, 241, 219, 0.22);
+  --app-focus-chip-bg: rgba(45, 241, 219, 0.18);
+  --app-focus-chip-border: rgba(45, 241, 219, 0.55);
+  --app-focus-chip-text: #b5fff6;
+  --app-skill-chip-bg: rgba(34, 211, 238, 0.2);
+  --app-skill-chip-border: rgba(45, 241, 219, 0.36);
+  --app-quote-border: rgba(45, 241, 219, 0.66);
+  --app-inline-link: #67f7e6;
+}
+
+:root[data-app-mode="light"],
+.app-shell[data-mode="light"] {
+  --app-card-border: rgba(0, 122, 109, 0.22);
+  --app-card-shadow:
+    0 16px 28px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(15, 23, 42, 0.02);
+  --app-hero-bg:
+    radial-gradient(circle at 15% 0%, rgba(45, 241, 219, 0.22), transparent 42%),
+    radial-gradient(circle at 92% 20%, rgba(34, 211, 238, 0.18), transparent 44%),
+    rgba(255, 255, 255, 0.96);
+  --app-section-bg: rgba(255, 255, 255, 0.95);
+  --app-eyebrow: #00695c;
+  --app-logo-outline: rgba(0, 122, 109, 0.35);
+  --app-toggle-bg: rgba(250, 255, 254, 0.98);
+  --app-toggle-border: rgba(0, 109, 119, 0.3);
+  --app-toggle-hover-bg: rgba(204, 251, 241, 0.9);
+  --app-toggle-color: #0f172a;
+  --app-contact-bg: rgba(236, 254, 255, 0.95);
+  --app-contact-border: rgba(20, 184, 166, 0.55);
+  --app-contact-text: #0f766e;
+  --app-contact-hover-bg: rgba(204, 251, 241, 0.92);
+  --app-contact-hover-border: rgba(13, 148, 136, 0.72);
+  --app-highlight-bg: linear-gradient(165deg, rgba(233, 252, 240, 0.98), rgba(216, 246, 228, 0.94));
+  --app-highlight-border: rgba(22, 112, 84, 0.32);
+  --app-timeline-line: rgba(13, 148, 136, 0.35);
+  --app-timeline-dot: #0d9488;
+  --app-timeline-dot-ring: rgba(13, 148, 136, 0.24);
+  --app-focus-chip-bg: rgba(20, 184, 166, 0.16);
+  --app-focus-chip-border: rgba(13, 148, 136, 0.48);
+  --app-focus-chip-text: #065f46;
+  --app-skill-chip-bg: rgba(45, 212, 191, 0.15);
+  --app-skill-chip-border: rgba(13, 148, 136, 0.32);
+  --app-quote-border: rgba(13, 148, 136, 0.58);
+  --app-inline-link: #0f766e;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 1.25rem 0 2rem;
+}
+
+.app-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.theme-toggle-button {
+  background: var(--app-toggle-bg) !important;
+  border: 1px solid var(--app-toggle-border) !important;
+  color: var(--app-toggle-color) !important;
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.theme-toggle-button:hover {
+  background: var(--app-toggle-hover-bg) !important;
+}
+
+.mode-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.hero-card,
+.section-card {
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--app-card-border);
+  border-radius: 24px;
+  box-shadow: var(--app-card-shadow);
+}
+
+.hero-card {
+  background: var(--app-hero-bg);
+  padding: 1.65rem;
+}
+
+.section-card {
+  background: var(--app-section-bg);
+  padding: 1.2rem;
+}
+
+.section-subtitle {
+  max-width: 52ch;
+}
+
+.eyebrow {
+  color: var(--app-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hero-copy {
+  flex: 1.2;
+}
+
+.brand-row {
+  min-height: 4.2rem;
+}
+
+.brand-logo {
+  border-radius: 18px;
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.25),
+    0 0 0 1px var(--app-logo-outline);
+  flex-shrink: 0;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.hero-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.hero-tagline {
+  font-size: 1.03rem;
+  font-weight: 600;
+  max-width: 52ch;
+}
+
+.hero-summary {
+  max-width: 58ch;
+}
+
+.hero-metrics {
+  display: grid;
+  flex: 1;
+  gap: 0.75rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.contact-link {
+  background: var(--app-contact-bg);
+  border: 1px solid var(--app-contact-border);
+  border-radius: 999px;
+  color: var(--app-contact-text) !important;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.42rem 0.82rem;
+  transition: all 180ms ease;
+}
+
+.contact-link:visited {
+  color: var(--app-contact-text) !important;
+}
+
+.contact-link:hover {
+  background: var(--app-contact-hover-bg);
+  border-color: var(--app-contact-hover-border);
+  transform: translateY(-1px);
+}
+
+.highlight-item {
+  background: var(--app-highlight-bg);
+  border: 1px solid var(--app-highlight-border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-height: 96px;
+  justify-content: flex-start;
+  padding: 0.85rem 0.95rem;
+}
+
+.highlight-item .MuiTypography-caption {
+  align-self: flex-start;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.highlight-item .MuiTypography-subtitle1 {
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: auto;
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.timeline-item {
+  border-left: 2px solid var(--app-timeline-line);
+  margin-left: 0.25rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  background: var(--app-timeline-dot);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px var(--app-timeline-dot-ring);
+  content: "";
+  height: 0.62rem;
+  left: -0.38rem;
+  position: absolute;
+  top: 0.45rem;
+  width: 0.62rem;
+}
+
+.focus-chip {
+  background: var(--app-focus-chip-bg);
+  border-color: var(--app-focus-chip-border) !important;
+  color: var(--app-focus-chip-text) !important;
+}
+
+.skill-chip {
+  background: var(--app-skill-chip-bg);
+  border: 1px solid var(--app-skill-chip-border);
+}
+
+.quote-text {
+  border-left: 3px solid var(--app-quote-border);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  padding-left: 0.9rem;
+}
+
+.inline-link {
+  color: var(--app-inline-link) !important;
+  font-weight: 600;
+}
+
+.inline-link:visited {
+  color: var(--app-inline-link) !important;
+}
+
+.resume-grid {
+  display: grid;
+  gap: 0.95rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.bullet-list {
+  margin: 0.7rem 0 0.88rem;
+  padding-left: 1.15rem;
+}
+
+.bullet-list li {
+  margin-bottom: 0.5rem;
+}
+
+.compact-list {
+  margin: 0.15rem 0 0.25rem;
+}
+
+@media (min-width: 900px) {
+  .app-shell {
+    padding: 2rem 0 2.75rem;
+  }
+
+  .hero-card {
+    padding: 2rem 2.1rem;
+  }
+
+  .brand-logo {
+    height: 4.2rem;
+    width: 4.2rem;
+  }
+
+  .section-card {
+    padding: 1.45rem;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .resume-grid {
+    gap: 1.1rem;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  }
+}
