@@ -2,6 +2,8 @@ import { Box, Link, Paper, Stack, Typography } from "@mui/material"
 import type { ResumeData } from "../interfaces"
 
 export function HeroIntro({ data }: { data: ResumeData }) {
+    const logoSrc = `${import.meta.env.BASE_URL}tg-mark.svg`
+
     return (
         <Paper className="hero-card" elevation={0}>
             <Stack direction={{ xs: "column", lg: "row" }} spacing={2.5}>
@@ -10,7 +12,7 @@ export function HeroIntro({ data }: { data: ResumeData }) {
                         Software Engineering Leadership
                     </Typography>
                     <Stack direction="row" spacing={1.1} alignItems="center" className="brand-row">
-                        <Box component="img" src="/tg-mark.svg" alt="TG monogram logo" className="brand-logo" />
+                        <Box component="img" src={logoSrc} alt="TG monogram logo" className="brand-logo" />
                         <Typography variant="h2" sx={{ fontSize: { xs: "2.2rem", md: "3.25rem" } }}>
                             {data.name}
                         </Typography>
